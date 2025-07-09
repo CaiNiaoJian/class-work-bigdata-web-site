@@ -1,0 +1,301 @@
+/* 历史支出图表样式 */
+.historical-chart {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.chart-header {
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+.chart-title {
+  color: var(--text-primary);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.chart-description {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: 1.5;
+}
+
+/* 指标选择器 */
+.metric-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-primary);
+}
+
+.metric-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: var(--font-sans);
+  min-width: 180px;
+}
+
+.metric-btn:hover {
+  border-color: var(--border-secondary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.metric-btn.active {
+  border-color: var(--metric-color, var(--accent-primary));
+  box-shadow: 0 0 0 2px rgba(var(--metric-color-rgb, 14, 165, 233), 0.2);
+  background: rgba(var(--metric-color-rgb, 14, 165, 233), 0.05);
+}
+
+.metric-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.metric-info {
+  flex: 1;
+  text-align: left;
+}
+
+.metric-label {
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.metric-unit {
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  font-weight: 400;
+}
+
+/* 图表容器 */
+.chart-container {
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
+/* 自定义工具提示 */
+.chart-tooltip {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(10px);
+}
+
+.tooltip-year {
+  color: var(--text-primary);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  text-align: center;
+  border-bottom: 1px solid var(--border-primary);
+  padding-bottom: var(--space-2);
+}
+
+.tooltip-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.tooltip-item:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tooltip-label {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.tooltip-value {
+  color: var(--accent-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+/* 无数据状态 */
+.no-chart-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.no-data-icon {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+.no-data-text {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.no-data-suggestion {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* 图表说明 */
+.chart-notes {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.note-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.note-icon {
+  font-size: var(--text-base);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .historical-chart {
+    padding: var(--space-4);
+  }
+  
+  .chart-title {
+    font-size: var(--text-xl);
+  }
+  
+  .metric-selector {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .metric-btn {
+    min-width: unset;
+    width: 100%;
+  }
+  
+  .chart-container {
+    overflow-x: auto;
+  }
+  
+  .chart-notes {
+    gap: var(--space-3);
+  }
+  
+  .note-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+  
+  .tooltip-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+  
+  .tooltip-label {
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    margin-left: -var(--space-4);
+    margin-right: -var(--space-4);
+  }
+  
+  .metric-selector {
+    margin-left: -var(--space-4);
+    margin-right: -var(--space-4);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* 图表动画 */
+.historical-chart {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Recharts 样式覆盖 */
+.recharts-legend-wrapper {
+  padding-top: var(--space-4) !important;
+}
+
+.recharts-legend-item {
+  margin-right: var(--space-4) !important;
+}
+
+.recharts-legend-item-text {
+  color: var(--text-secondary) !important;
+  font-size: var(--text-sm) !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--text-secondary) !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border-primary) !important;
+  opacity: 0.3 !important;
+} 
