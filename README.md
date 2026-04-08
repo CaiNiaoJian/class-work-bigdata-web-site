@@ -252,12 +252,6 @@ A: 请确保：
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-## 📞 联系信息
-
-- 项目维护者: [Your Name]
-- 电子邮件: [your.email@example.com]
-- 项目主页: [Repository URL]
-
 ## 🙏 致谢
 
 - 感谢 [SIPRI](https://www.sipri.org/) 提供权威的军事支出数据
